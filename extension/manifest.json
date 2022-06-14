@@ -1,0 +1,12 @@
+{
+  "name": "Squash and merge commits from PR description",
+  "version": "1.0",
+  "description": "Automatically fill a \"Squash and Merge\" PR commit with the PR's description ",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["*://github.com/*/*/pull/*"],
+      "js": ["extension.js"]
+    }
+  ]
+}
