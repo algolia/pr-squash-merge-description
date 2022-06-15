@@ -75,6 +75,9 @@ build-chromium: clean-chromium
 .PHONY: build-chromium
 
 release-chromium: build-chromium
-	zip docs/chromium/pr-desc-squash-merge-${VERSION}.zip build/chromium/*
+	rm -rf build/pr-desc-squash-merge-chromium-${VERSION}
+	mkdir build/pr-desc-squash-merge-chromium-${VERSION}
+	cp build/chromium/* build/pr-desc-squash-merge-chromium-${VERSION}/
+	cd build/; zip -r ../docs/chromium/pr-desc-squash-merge-${VERSION}.zip pr-desc-squash-merge-chromium-${VERSION}/; cd ..
 	echo "<a href="chromium/pr-desc-squash-merge-${VERSION}.zip">Chromium</a><br />" >>docs/index.html
 .PHONY: release-chromium
