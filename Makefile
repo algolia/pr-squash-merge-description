@@ -13,6 +13,7 @@ clean: clean-firefox
 
 setup-release:
 	rm -f docs/index.html
+.PHONY: setup-release
 
 release: setup-release release-firefox
 	git add docs/
