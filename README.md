@@ -4,7 +4,21 @@ This repository holds an extension to automatically include a GitHub Pull Reques
 
 ## Firefox usage
 
-Download the XPI from https://community.algolia.com/pr-squash-merge-description/
+1. Download the XPI from https://community.algolia.com/pr-squash-merge-description/ .
+
+Note: It will auto-update.
+
+## Chrome / Chromium usage
+
+1. Download the `zip` on https://community.algolia.com/pr-squash-merge-description/ .
+2. Extract it somewhere
+3. Navigate to chrome://extensions
+4. Enable "Developer mode"
+5. Click "Load unpacked"
+6. Select the folder where you extracted the extension.
+
+Note: It won't auto-update.
+New versions will need to be installed by downloading the latest version and replacing the unpacked folder's contents.
 
 # Development
 
