@@ -12,10 +12,10 @@ clean: clean-firefox
 .PHONY: clean
 
 setup-release:
-	rm -f dist/index.html
+	rm -f docs/index.html
 
 release: setup-release release-firefox
-	git add dist/
+	git add docs/
 	git commit -a -m "feat(release): v${VERSION}"
 	git tag "v${VERSION}"
 .PHONY: release
@@ -45,14 +45,14 @@ release-firefox: build-firefox
 	 	--api-key ${FIREFOX_JWT_ISSUER} \
 	 	--api-secret ${FIREFOX_JWT_SECRET} \
 	 	--channel unlisted
-	cp build/*.xpi dist/firefox/pr-desc-squash-merge-${VERSION}.xpi
-	cat dist/firefox/updates.json | \
-		jq >dist/firefox/updates.json.tmp ' \
+	cp build/*.xpi docs/firefox/pr-desc-squash-merge-${VERSION}.xpi
+	cat docs/firefox/updates.json | \
+		jq >docs/firefox/updates.json.tmp ' \
 			.addons["${FIREFOX_EXTENSION_ID}"].updates += [{ \
 				"version": "${VERSION}", \
 				"update_link": "https://community.algolia.com/pr-squash-merge-description/firefox/pr-desc-squash-merge-${VERSION}.xpi" \
 			}]'
-	mv dist/firefox/updates.json{.tmp,}
-	echo "<a href="firefox/pr-desc-squash-merge-${VERSION}.xpi">Firefox</a><br />" >>dist/index.html
+	mv docs/firefox/updates.json{.tmp,}
+	echo "<a href="firefox/pr-desc-squash-merge-${VERSION}.xpi">Firefox</a><br />" >>docs/index.html
 
 .PHONY: release-firefox
