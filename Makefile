@@ -14,7 +14,7 @@ clean: clean-firefox clean-chromium
 setup-release:
 	rm -f docs/index.html
 	echo "<h1>Squash and merge commits from PR description</h1>" >>docs/index.html
-	echo "<h2>Download links (v${VERSION})/h2>" >>docs/index.html
+	echo "<h2>Download links (v${VERSION})</h2>" >>docs/index.html
 .PHONY: setup-release
 
 release: setup-release release-firefox release-chromium
