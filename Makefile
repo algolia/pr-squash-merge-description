@@ -21,6 +21,8 @@ release: setup-release release-firefox release-chromium
 	git add docs/
 	git commit -a -m "feat(release): v${VERSION}"
 	git tag "v${VERSION}"
+	git push
+	git push --tags
 .PHONY: release
 
 clean-firefox:
