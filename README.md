@@ -37,5 +37,13 @@ Here are the variables to fill:
 - `FIREFOX_JWT_SECRET`: Firefox addon's API secret, found [here](https://addons.mozilla.org/en-US/developers/addon/api/key/)
 
 Other public variables are directly defined in the `Makefile`:
-- `VERSION`: version of the next release you'll create (in doubt, use the current one)
+- `VERSION`: version of the next release you'll create
 - `FIREFOX_EXTENSION_ID`: To fill after you've published the extension once (format: `{UUID}`)
+
+You also need to have `web-ext` & `jq` installed & available in your `PATH`.
+
+You can then run:
+
+```sh
+make release
+```
