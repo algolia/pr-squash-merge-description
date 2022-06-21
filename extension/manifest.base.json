@@ -3,7 +3,7 @@
   "description": "Automatically fill a \"Squash and Merge\" PR commit with the PR's description ",
   "content_scripts": [
     {
-      "matches": ["*://github.com/*/*/pull/*"],
+      "matches": ["*://github.com/*"],
       "js": ["extension.js"]
     }
   ]
