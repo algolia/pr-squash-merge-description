@@ -13,6 +13,10 @@
         {
           "version": "1.5",
           "update_link": "https://community.algolia.com/pr-squash-merge-description/firefox/pr-desc-squash-merge-1.5.xpi"
+        },
+        {
+          "version": "1.6",
+          "update_link": "https://community.algolia.com/pr-squash-merge-description/firefox/pr-desc-squash-merge-1.6.xpi"
         }
       ]
     }
