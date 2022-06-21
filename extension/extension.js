@@ -23,8 +23,13 @@ async function onClick() {
 	// Scroll to top
 	window.scrollTo(0, 0);
 
+	// Click the More actions button
+	const $prDescActionsIcon = await waitForSelector('[id^=pullrequest-] .octicon-kebab-horizontal');
+	const $prDescActionsButton = $prDescActionsIcon.parentElement;
+	$prDescActionsButton.click();
+
 	// Click PR description edit button to populate the form
-	const $prDescEditButton = document.querySelector('.js-comment-edit-button');
+	const $prDescEditButton = await waitForSelector('[id^=pullrequest-] .js-comment-edit-button');
 	$prDescEditButton.click();
 
 	// Get PR description
